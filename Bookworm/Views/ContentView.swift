@@ -20,6 +20,7 @@ struct ContentView: View {
         NavigationView {
             List(books, id: \.id) { book in
                 Text("\(book.title ?? "Unknown Title")")
+                Text("\(book.rating)")
             }
             .navigationBarTitle("Bookworm")
             .navigationBarItems(trailing: Button(action: {
