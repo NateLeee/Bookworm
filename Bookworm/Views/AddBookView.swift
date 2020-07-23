@@ -50,6 +50,7 @@ struct AddBookView: View {
                         // TODO: - Save this book!
                         self.addBook()
                         self.presentationMode.wrappedValue.dismiss()
+                        
                     }) {
                         Text("Save")
                     }

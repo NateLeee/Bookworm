@@ -28,7 +28,7 @@ struct ContentView: View {
                 Image(systemName: "plus")
             }))
                 .sheet(isPresented: $showSheet) {
-                    AddBookView()
+                    AddBookView().environment(\.managedObjectContext, self.moc)
             }
         }
     }
