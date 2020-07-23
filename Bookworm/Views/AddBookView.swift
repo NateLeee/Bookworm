@@ -62,7 +62,7 @@ struct AddBookView: View {
         
         newBook.id = UUID()
         newBook.title = self.title
-        newBook.authur = self.author
+        newBook.author = self.author
         newBook.genre = self.genre
         newBook.rating = self.rating
         newBook.review = self.review

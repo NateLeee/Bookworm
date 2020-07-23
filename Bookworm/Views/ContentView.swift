@@ -18,9 +18,20 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List(books, id: \.id) { book in
-                Text("\(book.title ?? "Unknown Title")")
-                Text("\(book.rating)")
+            List {
+                ForEach(books, id: \.id) { book in
+                    NavigationLink(destination: Text(book.title ?? "Unknown Title")) {
+                        EmojiRatingView(rating: book.rating)
+                        
+                        VStack(alignment: .leading) {
+                            Text(book.title ?? "Unknown Title")
+                                .font(.headline)
+                            
+                            Text(book.author ?? "Unknown Author")
+                                .foregroundColor(.secondary)
+                        }
+                    }
+                }
             }
             .navigationBarTitle("Bookworm")
             .navigationBarItems(trailing: Button(action: {
