@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FA18EFD224C9857C007AAA59 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18EFD124C9857C007AAA59 /* AddBookView.swift */; };
+		FA18EFD424C98C12007AAA59 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18EFD324C98C12007AAA59 /* RatingView.swift */; };
 		FA3A759224C960B00030437B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A759124C960B00030437B /* AppDelegate.swift */; };
 		FA3A759424C960B00030437B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A759324C960B00030437B /* SceneDelegate.swift */; };
 		FA3A759724C960B00030437B /* Bookworm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA3A759524C960B00030437B /* Bookworm.xcdatamodeld */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		FA18EFD124C9857C007AAA59 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
+		FA18EFD324C98C12007AAA59 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		FA3A758E24C960B00030437B /* Bookworm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookworm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA3A759124C960B00030437B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA3A759324C960B00030437B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			children = (
 				FA3A759824C960B00030437B /* ContentView.swift */,
 				FA18EFD124C9857C007AAA59 /* AddBookView.swift */,
+				FA18EFD324C98C12007AAA59 /* RatingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				FA3A759224C960B00030437B /* AppDelegate.swift in Sources */,
 				FA3A759724C960B00030437B /* Bookworm.xcdatamodeld in Sources */,
 				FA3A759924C960B00030437B /* ContentView.swift in Sources */,
+				FA18EFD424C98C12007AAA59 /* RatingView.swift in Sources */,
 				FA3A759424C960B00030437B /* SceneDelegate.swift in Sources */,
 				FA18EFD224C9857C007AAA59 /* AddBookView.swift in Sources */,
 			);
