@@ -10,13 +10,16 @@ import SwiftUI
 
 
 struct ContentView: View {
+    @Environment(\.managedObjectContext) var moc
+    
+    @FetchRequest(entity: Book.entity(), sortDescriptors: []) var books: FetchedResults<Book>
     
     @State private var showSheet = false
     
     var body: some View {
         NavigationView {
-            VStack {
-                Text("Unknown Student")
+            List(books, id: \.id) { book in
+                Text("\(book.title ?? "Unknown Title")")
             }
             .navigationBarTitle("Bookworm")
             .navigationBarItems(trailing: Button(action: {
