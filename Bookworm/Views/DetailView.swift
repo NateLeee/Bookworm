@@ -38,7 +38,9 @@ struct DetailView: View {
                     .padding()
                 
                 RatingView(rating: .constant(self.book.rating))
+                    .font(.largeTitle)
                 
+                Spacer()
             }
         }
         .navigationBarTitle(Text(book.title ?? "Unknown Book"), displayMode: .inline)
