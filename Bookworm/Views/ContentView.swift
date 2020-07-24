@@ -39,6 +39,14 @@ struct ContentView: View {
                             Text(book.author ?? "Unknown Author")
                                 .foregroundColor(.secondary)
                         }
+                        
+                        Spacer()
+                        
+                        Text(self.genDateString(book.date))
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                            .padding(.horizontal)
+                            .layoutPriority(1)
                     }
                 }
                 .onDelete { (indexSet) in
@@ -61,6 +69,17 @@ struct ContentView: View {
                     // AddBookView() // This ain't working!
             }
         }
+    }
+    
+    private func genDateString(_ date: Date?) -> String {
+        guard let date = date else {
+            return "Unknown Date"
+        }
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = .full
+        
+        return formatter.string(from: date)
     }
 }
 

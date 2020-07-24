@@ -70,6 +70,7 @@ struct AddBookView: View {
         newBook.genre = self.genre
         newBook.rating = self.rating
         newBook.review = self.review
+        newBook.date = Date()
         
         // Actually save this book!
         try? self.moc.save()
