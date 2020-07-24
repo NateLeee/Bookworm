@@ -12,7 +12,14 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
     
-    @FetchRequest(entity: Book.entity(), sortDescriptors: []) var books: FetchedResults<Book>
+    @FetchRequest(entity: Book.entity(), sortDescriptors: [
+//        NSSortDescriptor(key: "rating", ascending: false),
+//        NSSortDescriptor(key: "title", ascending: true),
+//        NSSortDescriptor(key: "author", ascending: true)
+        NSSortDescriptor(keyPath: \Book.rating, ascending: false),
+        NSSortDescriptor(keyPath: \Book.title, ascending: true),
+        NSSortDescriptor(keyPath: \Book.author, ascending: true)
+    ]) var books: FetchedResults<Book>
     
     @State private var showSheet = false
     
@@ -20,7 +27,6 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(books, id: \.id) { book in
-                    //NavigationLink(destination: Text(book.title ?? "Unknown Title")) {
                     NavigationLink(destination: DetailView(book: book)) {
                         EmojiRatingView(rating: book.rating)
                         

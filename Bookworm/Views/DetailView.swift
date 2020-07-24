@@ -16,7 +16,7 @@ struct DetailView: View {
     var body: some View {
         GeometryReader { geo in
             VStack {
-                ZStack {
+                ZStack(alignment: .bottomTrailing) {
                     Image(self.book.genre ?? "Fantasy")
                         .frame(width: geo.size.width)
                     
@@ -27,7 +27,7 @@ struct DetailView: View {
                         .foregroundColor(.white)
                         .background(Color.black.opacity(0.75))
                         .clipShape(Capsule())
-                    //.offset(x: -5, y: -5)
+                        .offset(x: -9, y: -9)
                 }
                 
                 Text(self.book.author ?? "Unknown Author")
