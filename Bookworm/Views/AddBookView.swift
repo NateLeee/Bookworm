@@ -15,7 +15,11 @@ struct AddBookView: View {
     @State private var title = ""
     @State private var author = ""
     @State private var rating: Int16 = 3
-    @State private var genre = ""
+    // Challenge I: - Right now it’s possible to select no genre for books,
+    // which causes a problem for the detail view. Please fix this, either by
+    // forcing a default, validating the form, or showing a default picture
+    // for unknown genres – you can choose.
+    @State private var genre = "Fantasy" // I chose to force a dafault.
     @State private var review = ""
     
     let genres = ["Fantasy", "Horror", "Kids", "Mystery", "Poetry", "Romance", "Thriller"]

@@ -27,7 +27,7 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(books, id: \.id) { book in
-                    NavigationLink(destination: DetailView(book: book)) {
+                    NavigationLink(destination: DetailView(book: book).environment(\.managedObjectContext, self.moc)) {
                         EmojiRatingView(rating: book.rating)
                         
                         VStack(alignment: .leading) {
@@ -56,6 +56,7 @@ struct ContentView: View {
             }))
                 .sheet(isPresented: $showSheet) {
                     AddBookView().environment(\.managedObjectContext, self.moc)
+                    // AddBookView() // This ain't working!
             }
         }
     }
