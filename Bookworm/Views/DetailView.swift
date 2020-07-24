@@ -13,6 +13,10 @@ import CoreData
 struct DetailView: View {
     var book: Book
     
+    @Environment(\.managedObjectContext) var moc
+    @Environment(\.presentationMode) var presentationMode
+    @State private var showingAlert = false
+    
     var body: some View {
         GeometryReader { geo in
             VStack {
@@ -29,21 +33,39 @@ struct DetailView: View {
                         .clipShape(Capsule())
                         .offset(x: -9, y: -9)
                 }
-                
-                Text(self.book.author ?? "Unknown Author")
-                    .font(.title)
-                    .foregroundColor(.secondary)
-                
-                Text(self.book.review ?? "No Review")
-                    .padding()
-                
-                RatingView(rating: .constant(self.book.rating))
-                    .font(.largeTitle)
-                
-                Spacer()
+                ScrollView(.vertical) {
+                    Text(self.book.author ?? "Unknown Author")
+                        .font(.title)
+                        .foregroundColor(.secondary)
+                    
+                    Text(self.book.review ?? "No Review")
+                        .padding()
+                    
+                    RatingView(rating: .constant(self.book.rating))
+                        .font(.largeTitle)
+                    
+                    Spacer()
+                }
             }
         }
         .navigationBarTitle(Text(book.title ?? "Unknown Book"), displayMode: .inline)
+        .navigationBarItems(trailing: Button(action: {
+            // Bring the alert
+            self.showingAlert.toggle()
+        }, label: {
+            Image(systemName: "trash")
+        }))
+        .alert(isPresented: $showingAlert) {
+            Alert(title: Text("Are you sure?"), message: Text("This cannot be un-done. Think twice."), primaryButton: .destructive(Text("Delete"), action: {
+                // Make deleting happen!
+                self.moc.delete(self.book)
+                try? self.moc.save()
+                
+                // Go back to main view.
+                self.presentationMode.wrappedValue.dismiss()
+                
+            }), secondaryButton: .cancel())
+        }
     }
 }
 
