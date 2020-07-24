@@ -17,6 +17,7 @@
 		FA3A759B24C960B10030437B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA3A759A24C960B10030437B /* Assets.xcassets */; };
 		FA3A759E24C960B10030437B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA3A759D24C960B10030437B /* Preview Assets.xcassets */; };
 		FA3A75A124C960B10030437B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3A759F24C960B10030437B /* LaunchScreen.storyboard */; };
+		FAC4120924CA92CB00A1FEE1 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4120824CA92CB00A1FEE1 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		FA3A759D24C960B10030437B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FA3A75A024C960B10030437B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA3A75A224C960B10030437B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAC4120824CA92CB00A1FEE1 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				FA3A759824C960B00030437B /* ContentView.swift */,
+				FAC4120824CA92CB00A1FEE1 /* DetailView.swift */,
 				FA18EFD124C9857C007AAA59 /* AddBookView.swift */,
 				FA18EFD324C98C12007AAA59 /* RatingView.swift */,
 				FA18EFD524C98F86007AAA59 /* EmojiRatingView.swift */,
@@ -175,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA3A759224C960B00030437B /* AppDelegate.swift in Sources */,
+				FAC4120924CA92CB00A1FEE1 /* DetailView.swift in Sources */,
 				FA3A759724C960B00030437B /* Bookworm.xcdatamodeld in Sources */,
 				FA18EFD624C98F86007AAA59 /* EmojiRatingView.swift in Sources */,
 				FA3A759924C960B00030437B /* ContentView.swift in Sources */,
