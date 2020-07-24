@@ -30,22 +30,26 @@ struct ContentView: View {
                     NavigationLink(destination: DetailView(book: book).environment(\.managedObjectContext, self.moc)) {
                         EmojiRatingView(rating: book.rating)
                         
-                        VStack(alignment: .leading) {
-                            Text(book.title ?? "Unknown Title")
-                                .font(.headline)
-                                // Challenge 2: - Modify ContentView so that books rated as 1 star have their name shown in red.
-                                .foregroundColor(book.rating == 1 ? .red : nil)
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text(book.title ?? "Unknown Title")
+                                    .font(.headline)
+                                    // Challenge 2: - Modify ContentView so that books rated as 1 star have their name shown in red.
+                                    .foregroundColor(book.rating == 1 ? .red : nil)
+                                
+                                Text(book.author ?? "Unknown Author")
+                                    .foregroundColor(.secondary)
+                            }
                             
-                            Text(book.author ?? "Unknown Author")
-                                .foregroundColor(.secondary)
+                            Spacer()
                         }
+                        .frame(minWidth: 162)
                         
                         Spacer()
                         
                         Text(self.genDateString(book.date))
                             .font(.caption)
                             .foregroundColor(.secondary)
-                            .padding(.horizontal)
                             .layoutPriority(1)
                     }
                 }
