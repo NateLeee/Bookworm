@@ -13,9 +13,9 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
     
     @FetchRequest(entity: Book.entity(), sortDescriptors: [
-//        NSSortDescriptor(key: "rating", ascending: false),
-//        NSSortDescriptor(key: "title", ascending: true),
-//        NSSortDescriptor(key: "author", ascending: true)
+        // NSSortDescriptor(key: "rating", ascending: false),
+        // NSSortDescriptor(key: "title", ascending: true),
+        // NSSortDescriptor(key: "author", ascending: true)
         NSSortDescriptor(keyPath: \Book.rating, ascending: false),
         NSSortDescriptor(keyPath: \Book.title, ascending: true),
         NSSortDescriptor(keyPath: \Book.author, ascending: true)
@@ -39,9 +39,17 @@ struct ContentView: View {
                         }
                     }
                 }
+                .onDelete { (indexSet) in
+                    for index in indexSet {
+                        let bookToDelete = self.books[index]
+                        self.moc.delete(bookToDelete)
+                    }
+                    
+                    try? self.moc.save()
+                }
             }
             .navigationBarTitle("Bookworm")
-            .navigationBarItems(trailing: Button(action: {
+            .navigationBarItems(leading: EditButton(), trailing: Button(action: {
                 self.showSheet = true
             }, label: {
                 Image(systemName: "plus")
